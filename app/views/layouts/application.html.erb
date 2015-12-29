@@ -10,12 +10,7 @@
 
   <%= render 'layouts/navigation' %>
 
-<!--This is where messages will appear in the template-->
-  <% flash.each do |name, msg| %>
-  <ul>
-    <li><%= msg %> </li>
-  </ul>
-  <% end %>
+  <%= render "layouts/messages" %>
 
 <%= yield %>
 
