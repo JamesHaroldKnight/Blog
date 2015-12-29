@@ -1,4 +1,4 @@
-<h1> Create an Article </h1>
+<h1>You are currently editing Article</h1>
 
 <% if @article.errors.any? %>
 <% @article.errors.full_messages.each do |msg| %>
@@ -27,4 +27,4 @@
 
 <% end %>
 
-<%= link_to "Back to articles page", articles_path %>
+<%= link_to "Back to Article List", articles_path %>
