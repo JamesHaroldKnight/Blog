@@ -6,23 +6,41 @@
 <% end %>
 <% end %>
 
+<div class='row'>
+  <div class='col-xs-12'>
+    <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f| %>
 
-<%= form_for @article do |f| %>
+    <div class="form-group">
+      <div class="control-label col-sm-2">
+        <%= f.label :title %>
+      </div>
+      <div class="col-sm-8">
+        <%= f.text_field :title, class: "form-control", placeholder: "Article Title", autofocus: true %>
+      </div>
+    </div>
 
-<p>
-  <%= f.label :title %> <br/>
-  <%= f.text_field :title %>
-</p>
+    <div class = 'form-group'>
+      <div class="control-label col-sm-2">
+        <%=f.label :description %>
+      </div>
+      <div class ="col-sm-8">
+        <%=f.text_area :description, class: "form-control", rows: 10, placeholder: "Article Description" %>
+      </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+       <%= f.submit class: "btn btn-info"  %>
+      </div>
+    </div>
+    <div class="form-group">
+     <div class="col-xs-offset-2 col-xs-4">
+      <%= link_to "Cancel and return to article list", articles_path, class: "btn btn-danger" %>
+      </div>
+    </div>
 
-<p>
-  <%=f.label :description %> <br/>
-  <%=f.text_area :description %>
-</p>
+    <% end %>
 
-<p>
-   <%= f.submit %>
-</p>
+  </div>
+</div>
 
-<% end %>
 
-<%= link_to "Back to Article List", articles_path %>
