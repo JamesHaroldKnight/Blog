@@ -1,9 +1,11 @@
 require 'test_helper'
 
-class CreateCategoriesTest < ActionDispatch::IntegrationTest
+class ListCategoriesTest < ActionDispatch::IntegrationTest
+
+  #Each test runs independantly
 
   def setup
-    @category = Category.create(name: "star wars")
+    @category = Category.create(name: "sports")
     @category2 = Category.create(name: "programming")
   end
 
