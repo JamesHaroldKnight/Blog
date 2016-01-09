@@ -55,7 +55,8 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:title, :description)
+    # The square backets mean the categorys are coming in as array formm.
+    params.require(:article).permit(:title, :description, category_ids: [])
   end
 
   # Creating a method for this as it repeats a lot
